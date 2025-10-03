@@ -1,0 +1,348 @@
+Notepad++ v8.8.5 regression-fix:
+
+ 1. Fix "Edit with Notepad++" context menu not being installed correctly regression.
+ 
+
+Notepad++ v8.8.4 vulnerability-fixes, bug-fixes & new enhancement:
+
+ 1. Fix -notabbar & asNotepad.xml stop hiding tabbar regression (from v8.7.9).
+ 2. Fix "Edit with Notepad++" not removed by uninstaller regression (from v8.8.3).
+ 3. Fix possible heap memory leak.
+ 4. Increase search input length from 2046 to 16383.
+ 5. Add warning tip for the max length on search input (Find/Replace).
+ 6. Fix JavaScript listed twice in Language & Indent settings of Preferences issue.
+ 7. Fix external lexers showing several time in Indent settings issue.
+ 8. Add button to insert variables in the run dialog.
+ 9. Enhance "Go to settings": guide users to the related setting explicitly.
+10. Add a clear button for filter field in Shortcut Mapper.
+11. Make NFO font overridable by adding font name in Lexer "nfo" of stylers.xml.
+
+
+Get more info on
+https://notepad-plus-plus.org/downloads/v8.8.5/
+
+
+Included plugins:
+
+1.  NppExport v0.4
+2.  Converter v4.6
+3.  Mime Tool v3.1
+
+
+Updater (Installer only):
+
+* WinGUp (for Notepad++) v5.3.3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sustainable Energy & My World</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9fdf9;
+      color: #333;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background: linear-gradient(135deg, #2e7d32, #66bb6a);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+    nav {
+      background: #c8e6c9;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #2e7d32;
+      font-weight: bold;
+      font-size: 1.05em;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .divider {
+      height: 3px;
+      width: 80px;
+      background: linear-gradient(90deg, #2e7d32, #66bb6a);
+      margin: 25px auto;
+      border-radius: 2px;
+    }
+    button {
+      background: #2e7d32;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background: #1b5e20;
+    }
+    progress {
+      width: 100%;
+      height: 20px;
+    }
+    footer {
+      text-align: center;
+      background: #2e7d32;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+    /* Dark Mode */
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+    .dark-mode .card {
+      background: #1e1e1e;
+      color: #ddd;
+    }
+    .dark-mode nav {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌍 Sustainable Energy Knowledge Hub</h1>
+  <p>Explore Green Energy · Build a Better Future</p>
+  <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#solar">Solar</a>
+  <a href="#wind">Wind</a>
+  <a href="#calc">Energy Saver</a>
+  <a href="#carbon">Carbon Calculator</a>
+  <a href="#compare">Energy Comparison</a>
+  <a href="#progress">Progress Bar</a>
+  <a href="#goal">Eco Goals</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#chart">Charts</a>
+  <a href="#about">About</a>
+</nav>
+
+<section id="home" class="card">
+  <h2>🌱 Home</h2>
+  <div class="divider"></div>
+  <p>Welcome to my website! Here you can learn about sustainable energy and also find some of my personal stories and interests.</p>
+</section>
+
+<section id="solar" class="card">
+  <h2>☀️ Solar Energy</h2>
+  <div class="divider"></div>
+  <p>Solar energy is a clean and renewable source that converts sunlight into electricity using solar panels.</p>
+</section>
+
+<section id="wind" class="card">
+  <h2>💨 Wind Energy</h2>
+  <div class="divider"></div>
+  <p>Wind power uses the kinetic energy of wind to turn turbines, which generate electricity.</p>
+</section>
+
+<section id="calc" class="card">
+  <h2>🔢 Energy Saving Calculator</h2>
+  <div class="divider"></div>
+  <p>Enter how many kWh you save daily:</p>
+  <input id="energy" type="number" placeholder="e.g. 2">
+  <button onclick="calc()">Calculate</button>
+  <p id="result"></p>
+</section>
+
+<section id="carbon" class="card">
+  <h2>🌟 Carbon Footprint Calculator</h2>
+  <div class="divider"></div>
+  <p>Enter your daily electricity usage (kWh):</p>
+  <input id="carbonInput" type="number" placeholder="e.g. 5">
+  <button onclick="calcCarbon()">Calculate</button>
+  <p id="carbonResult"></p>
+</section>
+
+<section id="compare" class="card">
+  <h2>⚡ Energy Comparison</h2>
+  <div class="divider"></div>
+  <p>Select an energy source:</p>
+  <select id="energyType">
+    <option value="solar">Solar</option>
+    <option value="wind">Wind</option>
+    <option value="coal">Coal</option>
+  </select>
+  <button onclick="compareEnergy()">Compare</button>
+  <p id="compareResult"></p>
+</section>
+
+<section id="progress" class="card">
+  <h2>📈 Progress Bar</h2>
+  <div class="divider"></div>
+  <p>Enter your saved energy (kWh):</p>
+  <input id="progressInput" type="number" placeholder="e.g. 100">
+  <button onclick="updateProgress()">Update</button>
+  <progress id="progressBar" value="0" max="100"></progress>
+  <p id="progressText">Current Progress: 0%</p>
+</section>
+
+<section id="goal" class="card">
+  <h2>✅ Eco Goal Tracker</h2>
+  <div class="divider"></div>
+  <button onclick="addGoal()">Mark Today</button>
+  <p id="goalResult">No goals recorded yet.</p>
+</section>
+
+<section id="quiz" class="card">
+  <h2>❓ Quiz</h2>
+  <div class="divider"></div>
+  <p>Question: Roughly what percentage of Canada’s electricity comes from hydropower?</p>
+  <input id="quiz" type="number" placeholder="Enter %">
+  <button onclick="checkAnswer()">Submit</button>
+  <p id="quizResult"></p>
+</section>
+
+<section id="chart" class="card">
+  <h2>📊 Energy Chart</h2>
+  <div class="divider"></div>
+  <canvas id="energyChart" width="400" height="200"></canvas>
+</section>
+
+<section id="about" class="card">
+  <h2>👤 About Me</h2>
+  <div class="divider"></div>
+  <p>Hello! I’m a CEGEP student with a strong interest in science and sustainable development.</p>
+  <p>This website is a small project where I practice web development and share knowledge about green energy.</p>
+</section>
+
+<footer>
+  <p>© 2025 My Energy Website | A Greener Future Starts with Us 🌱</p>
+</footer>
+
+<!-- JS Section -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+/* Energy Saving Calculator */
+function calc() {
+  let daily = document.getElementById("energy").value;
+  if (daily === "" || daily <= 0) {
+    document.getElementById("result").innerText = "Please enter a valid number!";
+    return;
+  }
+  let yearly = daily * 365;
+  document.getElementById("result").innerText =
+    "You can save about " + yearly + " kWh of electricity per year!";
+}
+
+/* Carbon Footprint Calculator */
+function calcCarbon() {
+  let daily = document.getElementById("carbonInput").value;
+  if (daily === "" || daily <= 0) {
+    document.getElementById("carbonResult").innerText = "Please enter a valid number!";
+    return;
+  }
+  let yearly = daily * 365;
+  let co2 = yearly * 0.4; // Assume 1 kWh ≈ 0.4 kg CO2
+  let trees = co2 / 20;   // Assume 1 tree absorbs 20kg CO2 per year
+  document.getElementById("carbonResult").innerText =
+    "Annual CO₂ emissions: " + co2.toFixed(1) + " kg 🌍\n" +
+    "Equivalent to planting about " + trees.toFixed(1) + " trees 🌳";
+}
+
+/* Energy Comparison */
+function compareEnergy() {
+  let type = document.getElementById("energyType").value;
+  let result = "";
+  if (type === "solar") {
+    result = "Solar: Clean energy, moderate output, decreasing cost, almost zero CO₂.";
+  } else if (type === "wind") {
+    result = "Wind: Clean energy, good in windy regions, low cost, very low CO₂.";
+  } else {
+    result = "Coal: Traditional source, high output but very polluting, ~1kg CO₂ per kWh.";
+  }
+  document.getElementById("compareResult").innerText = result;
+}
+
+/* Progress Bar */
+function updateProgress() {
+  let val = document.getElementById("progressInput").value;
+  if (val === "" || val <= 0) {
+    document.getElementById("progressText").innerText = "Please enter a valid number!";
+    return;
+  }
+  let percent = Math.min((val / 1000) * 100, 100); // Assume target = 1000 kWh
+  document.getElementById("progressBar").value = percent;
+  document.getElementById("progressText").innerText = "Current Progress: " + percent.toFixed(1) + "%";
+}
+
+/* Eco Goal Tracker */
+let goalCount = 0;
+function addGoal() {
+  goalCount++;
+  document.getElementById("goalResult").innerText =
+    "You have marked " + goalCount + " days 🌱";
+}
+
+/* Quiz */
+function checkAnswer() {
+  let ans = document.getElementById("quiz").value;
+  if (ans >= 55 && ans <= 65) {
+    document.getElementById("quizResult").innerText = "✅ Correct! It’s about 60%.";
+  } else {
+    document.getElementById("quizResult").innerText = "❌ Try again!";
+  }
+}
+
+/* Dark Mode */
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+
+/* Chart.js */
+const ctx = document.getElementById('energyChart');
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ['Hydro', 'Wind', 'Solar', 'Nuclear'],
+    datasets: [{
+      data: [60, 20, 10, 10],
+      backgroundColor: ['#42a5f5','#66bb6a','#ffca28','#ab47bc']
+    }]
+  }
+});
+</script>
+
+</body>
+</html>
